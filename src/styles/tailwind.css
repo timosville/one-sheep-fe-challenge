@@ -6,6 +6,9 @@
   .title {
     @apply font-bold text-4xl text-center text-gray-900;
   }
+  .subtitle {
+    @apply mt-3 p-4 font-medium text-2xl text-center;
+  }
   .button {
     @apply bg-white rounded-full px-8  py-3  shadow-md text-center  font-extrabold  text-4xl  leading-tight  text-gray-900;
   }
