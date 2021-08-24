@@ -13,6 +13,18 @@ const methods = {
   setCode(value) {
     state.code = value;
   },
+  setPostCodes(value) {
+    state.post_codes = value;
+  },
+  getPostCodes() {
+    const api = `api.postcodes.io/postcodes/${state.code}/autocomplete`;
+    const req = async (api) =>
+      await fetch(api)
+        .then((response) => response.json())
+        .then((json) => (state.post_codes = json))
+        .catch((error) => console.log(error));
+    req(api);
+  },
 };
 
 export default {

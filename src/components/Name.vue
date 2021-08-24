@@ -15,7 +15,6 @@
         />
 
         <ul
-          v-if="showAutoCompleteForm"
           class="
             absolute
             mx-2
@@ -64,7 +63,7 @@
 </template>
 
 <script>
-import { inject, computed, ref } from "vue";
+import { inject, computed, ref, watch } from "vue";
 
 export default {
   name: "Name",
@@ -91,27 +90,14 @@ export default {
         return store.state.code;
       },
       set(value) {
-        // const api = `http://api.postcodes.io/postcodes/${value}/autocomplete`;
-        // const req = async () =>
-        //   await fetch(api)
-        //     .then((response) => response.json())
-        //     .then((json) => (postCodes.value = json))
-        //     .catch((error) => (error.value = error));
-
-        // if (value) {
-        //   req();
-        // }
-        // console.log(value);
-        // console.log(postCodes.value);
-        // console.log(error.value);
-        if (value) {
-          showAutoCompleteForm.value = true;
-        } else {
-          showAutoCompleteForm.value = false;
-        }
         return store.methods.setCode(value);
       },
     });
+
+    watch(code, (code, newCode) => {
+      store.methods.getPostCodes;
+    });
+
     return { name, code, post_codes, showAutoCompleteForm };
   },
   methods: {
