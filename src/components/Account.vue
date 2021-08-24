@@ -43,6 +43,11 @@ export default {
       password,
     };
   },
+  methods: {
+    changeRoute() {
+      this.$router.push("/settings");
+    },
+  },
 };
 </script>
     
