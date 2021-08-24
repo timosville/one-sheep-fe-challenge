@@ -7,7 +7,12 @@
         Hi there.<br />
         Ready to do your best ever work?
       </h1>
-      <button class="absolute bottom-0 mb-12 sm:mb-28 button">Let's Go!</button>
+      <button
+        @click="changeRoute()"
+        class="absolute bottom-0 mb-12 sm:mb-28 button"
+      >
+        Let's Go!
+      </button>
     </div>
     <div class="sm:flex-1 flex flex-col items-center justify-center">
       <img class="sm:mx-3 sm:w-9/12" src="/hero/welcome.svg" alt="welcome" />
