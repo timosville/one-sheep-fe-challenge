@@ -5,6 +5,8 @@
         We need a couple<br />
         of details to get you set up.
       </h1>
+      <input type="text" class="field" placeholder="Name" />
+      <input type="text" class="field" placeholder="Post Code" />
       <button
         @click="changeRoute()"
         class="absolute bottom-0 mb-12 sm:mb-28 button"
@@ -13,7 +15,11 @@
       </button>
     </div>
     <div class="sm:flex-1 flex flex-col items-center justify-center">
-      <img class="sm:mx-3 sm:w-9/12" src="/hero/work-at-home.svg" alt="work at home" />
+      <img
+        class="sm:mx-3 sm:w-9/12"
+        src="/hero/work-at-home.svg"
+        alt="work at home"
+      />
     </div>
   </div>
 </template>

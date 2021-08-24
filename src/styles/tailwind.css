@@ -9,4 +9,7 @@
   .button {
     @apply bg-white rounded-full px-8  py-3  shadow-md text-center  font-extrabold  text-4xl  leading-tight  text-gray-900;
   }
+  .field {
+    @apply flex px-4 py-3 mx-4 mt-2 rounded-full border-black border-2 text-2xl font-bold  placeholder-black;
+  }
 }
