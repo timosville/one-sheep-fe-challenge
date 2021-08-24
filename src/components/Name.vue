@@ -5,9 +5,18 @@
         We need a couple<br />
         of details to get you set up.
       </h1>
-      <input type="text" class="field" placeholder="Name" />
-      <input type="text" class="field" placeholder="Post Code" />
-      {{ store.state.name }}
+      <input
+        type="text"
+        class="field"
+        placeholder="Name"
+        v-model="store.state.name"
+      />
+      <input
+        type="text"
+        class="field"
+        placeholder="Post Code"
+        v-model="store.state.code"
+      />
       <button
         @click="changeRoute()"
         class="absolute bottom-0 mb-12 sm:mb-28 button"
