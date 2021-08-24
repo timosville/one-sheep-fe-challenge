@@ -7,6 +7,7 @@
       </h1>
       <input type="text" class="field" placeholder="Name" />
       <input type="text" class="field" placeholder="Post Code" />
+      {{ store.state.name }}
       <button
         @click="changeRoute()"
         class="absolute bottom-0 mb-12 sm:mb-28 button"
@@ -25,8 +26,14 @@
 </template>
 
 <script>
+import { inject } from "vue";
 export default {
   name: "Name",
+  setup() {
+    const store = inject("store");
+
+    return { store };
+  },
   methods: {
     changeRoute() {
       this.$router.push("/account");
