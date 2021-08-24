@@ -6,7 +6,45 @@
         of details to get you set up.
       </h1>
       <input type="text" class="field" placeholder="Name" v-model="name" />
-      <input type="text" class="field" placeholder="Post Code" v-model="code" />
+      <div class="relative">
+        <input
+          type="text"
+          class="field"
+          placeholder="Post Code"
+          v-model="code"
+        />
+
+        <ul
+          class="
+            absolute
+            mx-2
+            mt-1
+            py-1
+            w-11/12
+            bg-white
+            rounded-md
+            shadow-xl
+            z-20
+          "
+        >
+          <li
+            v-for="(post_code, i) in post_codes"
+            :key="i"
+            class="
+              block
+              px-4
+              py-2
+              text-sm
+              capitalize
+              text-gray-700
+              hover:bg-gray-500
+              hover:text-white
+            "
+          >
+            {{ post_code }}
+          </li>
+        </ul>
+      </div>
       <button
         @click="changeRoute()"
         class="absolute bottom-0 mb-12 sm:mb-28 button"
@@ -26,6 +64,7 @@
 
 <script>
 import { inject, computed } from "vue";
+
 export default {
   name: "Name",
   setup() {
@@ -39,13 +78,34 @@ export default {
         return store.methods.setName;
       },
     });
+
+    const post_codes = computed({
+      get() {
+        return store.state.post_codes;
+      },
+    });
     const code = computed({
       get() {
         return store.state.code;
       },
-      set(value) {},
+      set(value) {
+        // const api = `http://api.postcodes.io/postcodes/${value}/autocomplete`;
+        // const req = async () =>
+        //   await fetch(api)
+        //     .then((response) => response.json())
+        //     .then((json) => (postCodes.value = json))
+        //     .catch((error) => (error.value = error));
+
+        // if (value) {
+        //   req();
+        // }
+        // console.log(value);
+        // console.log(postCodes.value);
+        // console.log(error.value);
+        return store.methods.setCode;
+      },
     });
-    return { store, name, code };
+    return { store, name, code, post_codes };
   },
   methods: {
     changeRoute() {
