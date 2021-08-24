@@ -17,6 +17,7 @@
     "autoprefixer": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
+    "vee-validate": "next",
     "vite": "^2.4.4"
   }
 }

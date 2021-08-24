@@ -1655,6 +1655,7 @@ fsevents@~2.3.2:
     autoprefixer: latest
     postcss: latest
     tailwindcss: latest
+    vee-validate: next
     vite: ^2.4.4
     vue: ^3.0.5
     vue-router: 4
@@ -2320,6 +2321,15 @@ resolve@^1.20.0:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 474acf1146cb2701fe3b074892217553dfcf9a031280919ba1b8d651a068c9b15d863b7303cb15bd00a862b498e6cf4ad7b4a08fb134edd5a6f7641681cb54a2
+  languageName: node
+  linkType: hard
+
+"vee-validate@npm:next":
+  version: 4.4.9
+  resolution: "vee-validate@npm:4.4.9"
+  peerDependencies:
+    vue: ^3.0.0
+  checksum: ad0bedae3401c7f91cf2d3f2ffe4ecd24eb524a3a5d97417cf1b59439a69849de813912d15227d88fa08526812b7d965fccef0240f3a8ac4fc3242a608dfa84e
   languageName: node
   linkType: hard
 
