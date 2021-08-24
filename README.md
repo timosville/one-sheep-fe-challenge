@@ -10,7 +10,7 @@ Clone repo from Github
 git clone https://github.com/timosville/one-sheep-fe-challenge.git
 ```
 
-CD into directory and install packages with Yarn.
+Install packages with Yarn.
 
 ```bash
 yarn
