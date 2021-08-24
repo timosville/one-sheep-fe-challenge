@@ -5,18 +5,8 @@
         We need a couple<br />
         of details to get you set up.
       </h1>
-      <input
-        type="text"
-        class="field"
-        placeholder="Name"
-        v-model="store.state.name"
-      />
-      <input
-        type="text"
-        class="field"
-        placeholder="Post Code"
-        v-model="store.state.code"
-      />
+      <input type="text" class="field" placeholder="Name" v-model="name" />
+      <input type="text" class="field" placeholder="Post Code" v-model="code" />
       <button
         @click="changeRoute()"
         class="absolute bottom-0 mb-12 sm:mb-28 button"
@@ -35,13 +25,27 @@
 </template>
 
 <script>
-import { inject } from "vue";
+import { inject, computed } from "vue";
 export default {
   name: "Name",
   setup() {
     const store = inject("store");
 
-    return { store };
+    const name = computed({
+      get() {
+        return store.state.name;
+      },
+      set(value) {
+        return store.methods.setName;
+      },
+    });
+    const code = computed({
+      get() {
+        return store.state.code;
+      },
+      set(value) {},
+    });
+    return { store, name, code };
   },
   methods: {
     changeRoute() {
