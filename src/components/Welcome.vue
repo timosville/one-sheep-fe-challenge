@@ -15,7 +15,15 @@
   </div>
 </template>
 
-<script >
+<script>
+export default {
+  name: "Welcome",
+  methods: {
+    changeRoute() {
+      this.$router.push("/start");
+    },
+  },
+};
 </script>
 
 
