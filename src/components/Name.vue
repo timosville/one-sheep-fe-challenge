@@ -15,6 +15,7 @@
         />
 
         <ul
+          v-if="code"
           class="
             absolute
             mx-2
@@ -22,6 +23,9 @@
             py-1
             w-11/12
             bg-white
+            border-black border
+            text-2xl
+            font-bold
             rounded-md
             shadow-xl
             z-20
