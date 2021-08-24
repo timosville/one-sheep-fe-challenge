@@ -51,7 +51,8 @@
       </div>
       <button
         @click="changeRoute()"
-        class="absolute bottom-0 mb-12 sm:mb-28 button"
+        class="absolute bottom-0 mb-12 sm:mb-28 button disabled:opacity-50"
+        :disabled="!code.length | !name.length"
       >
         Next
       </button>
