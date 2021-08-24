@@ -6,6 +6,25 @@
         customise your experience.
       </h1>
       <h2 class="subtitle">Lights on or off?</h2>
+      <button
+        @click="toggleLight()"
+        v-bind:class="[isLight ? 'justify-start' : 'justify-end']"
+        class="
+          border-black border-2
+          rounded-full
+          border-grey
+          flex flex-col
+          items-center
+          cursor-pointer
+          h-20
+        "
+      >
+        <span
+          v-bind:class="[isLight ? 'bg-one-green' : 'bg-white']"
+          class="rounded-full border w-12 h-12 border-grey outline shadow"
+        >
+        </span>
+      </button>
     </div>
     <div class="sm:flex-1 flex flex-col items-center justify-center">
       <img
@@ -18,11 +37,23 @@
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
-  name: "Name",
+  name: "Appearance",
+
+  setup() {
+    const isLight = ref(true);
+
+    return {
+      isLight,
+    };
+  },
   methods: {
     changeRoute() {
-      this.$router.push("/account");
+      this.$router.push("/avatar");
+    },
+    toggleLight() {
+      this.isLight = !this.isLight;
     },
   },
 };
