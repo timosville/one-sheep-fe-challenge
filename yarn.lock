@@ -231,24 +231,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vuelidate/core@npm:^2.0.0-alpha.24":
-  version: 2.0.0-alpha.24
-  resolution: "@vuelidate/core@npm:2.0.0-alpha.24"
-  dependencies:
-    vue-demi: ^0.11.3
-  checksum: e5d2607f383d2fe054b5189fec09ae5b5d5c4ffb186c2bfd9e35c9dc01d242e498e6c322a0b4d8a20e4c0c24a96767add1b4a7f9b2eaa48fff0d927915269345
-  languageName: node
-  linkType: hard
-
-"@vuelidate/validators@npm:^2.0.0-alpha.21":
-  version: 2.0.0-alpha.21
-  resolution: "@vuelidate/validators@npm:2.0.0-alpha.21"
-  dependencies:
-    vue-demi: ^0.11.3
-  checksum: c0f9037681ce958a959dff2fb96e9954660d521cbf55b1e6f6ccaebe937bdaff84057ffee1d1e03c634b46fc8864e5fb1287a6b93ca96a46938cff0a050d812a
-  languageName: node
-  linkType: hard
-
 "abbrev@npm:1":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -1670,8 +1652,6 @@ fsevents@~2.3.2:
     "@tailwindcss/forms": ^0.3.3
     "@vitejs/plugin-vue": ^1.3.0
     "@vue/compiler-sfc": ^3.0.5
-    "@vuelidate/core": ^2.0.0-alpha.24
-    "@vuelidate/validators": ^2.0.0-alpha.21
     autoprefixer: latest
     postcss: latest
     tailwindcss: latest
@@ -2358,22 +2338,6 @@ resolve@^1.20.0:
   bin:
     vite: bin/vite.js
   checksum: 9465f56c7b3bf9014cb028fbf533590c9f150bd5d37eac81e1f3abb3a05a8a20ad431204b622a7d39d18fd245b175dbf00b5b800138544371d436c214cfbb09f
-  languageName: node
-  linkType: hard
-
-"vue-demi@npm:^0.11.3":
-  version: 0.11.3
-  resolution: "vue-demi@npm:0.11.3"
-  peerDependencies:
-    "@vue/composition-api": ^1.0.0-rc.1
-    vue: ^3.0.0-0 || ^2.6.0
-  peerDependenciesMeta:
-    "@vue/composition-api":
-      optional: true
-  bin:
-    vue-demi-fix: bin/vue-demi-fix.js
-    vue-demi-switch: bin/vue-demi-switch.js
-  checksum: f579914ee5a3fa3db4a11068298859112dca4469e2622fe85d0a3bd98a195fac02910796640ba57186370d9570d1985a4e61c21b19752be95c5f2b3441f1004f
   languageName: node
   linkType: hard
 

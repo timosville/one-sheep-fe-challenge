@@ -31,8 +31,6 @@
 
 <script>
 import { inject, ref } from "vue";
-import useValidate from "@vuelidate/core";
-import { required } from "@vuelidate/validators";
 
 export default {
   setup() {
