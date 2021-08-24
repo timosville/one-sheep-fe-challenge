@@ -15,6 +15,7 @@
         />
 
         <ul
+          v-if="showAutoCompleteForm"
           class="
             absolute
             mx-2
@@ -63,19 +64,20 @@
 </template>
 
 <script>
-import { inject, computed } from "vue";
+import { inject, computed, ref } from "vue";
 
 export default {
   name: "Name",
   setup() {
     const store = inject("store");
+    const showAutoCompleteForm = ref(false);
 
     const name = computed({
       get() {
         return store.state.name;
       },
       set(value) {
-        return store.methods.setName;
+        return store.methods.setName(value);
       },
     });
 
@@ -102,10 +104,15 @@ export default {
         // console.log(value);
         // console.log(postCodes.value);
         // console.log(error.value);
-        return store.methods.setCode;
+        if (value) {
+          showAutoCompleteForm.value = true;
+        } else {
+          showAutoCompleteForm.value = false;
+        }
+        return store.methods.setCode(value);
       },
     });
-    return { store, name, code, post_codes };
+    return { name, code, post_codes, showAutoCompleteForm };
   },
   methods: {
     changeRoute() {
