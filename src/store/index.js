@@ -4,6 +4,7 @@ const state = reactive({
   name: "",
   code: "",
   post_codes: ["OX49 5NU", "M32 0JG", "NE30 1DP"],
+  isLight: true,
 });
 
 const methods = {
@@ -24,6 +25,9 @@ const methods = {
         .then((json) => (state.post_codes = json))
         .catch((error) => console.log(error));
     req(api);
+  },
+  toggleLight() {
+    state.isLight = !state.isLight;
   },
 };
 

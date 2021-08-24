@@ -7,7 +7,7 @@
       </h1>
       <h2 class="subtitle">Lights on or off?</h2>
       <button
-        @click="toggleLight()"
+        @click="store.methods.toggleLight"
         v-bind:class="[isLight ? 'justify-start' : 'justify-end']"
         class="
           border-black border-2
@@ -37,23 +37,28 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { inject, computed, ref, watch } from "vue";
+
 export default {
   name: "Appearance",
 
   setup() {
-    const isLight = ref(true);
+    const store = inject("store");
+
+    const isLight = computed({
+      get() {
+        return store.state.isLight;
+      },
+    });
 
     return {
+      store,
       isLight,
     };
   },
   methods: {
     changeRoute() {
       this.$router.push("/avatar");
-    },
-    toggleLight() {
-      this.isLight = !this.isLight;
     },
   },
 };
