@@ -12,6 +12,11 @@ const routes = [
     name: "Start",
     component: Name,
   },
+  {
+    path: "/account",
+    name: "Account",
+    component: Account,
+  },
 ];
 
 const router = createRouter({
