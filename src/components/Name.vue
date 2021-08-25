@@ -53,7 +53,7 @@
     </div>
     <div class="container-grid__hero">
       <img
-        class="object-contain w-full"
+        class="container-grid__image"
         src="/hero/work-at-home.svg"
         alt="work at home"
       />

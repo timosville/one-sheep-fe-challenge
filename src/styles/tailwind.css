@@ -30,4 +30,7 @@
   .container-grid__form {
     @apply col-start-2 col-end-6 row-start-3 row-end-5 flex flex-col items-center justify-center;
   }
+  .container-grid__image {
+    @apply object-contain w-full;
+  }
 }
