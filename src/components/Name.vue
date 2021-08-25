@@ -1,10 +1,12 @@
 <template>
-  <div class="min-h-screen flex flex-col sm:flex-row justify-between">
-    <div class="flex flex-col items-center justify-items-center">
-      <h1 class="sm:mt-20 pt-24 px-8 title">
+  <div class="max-h-screen container-grid">
+    <div class="container-grid__title">
+      <h1 class="title">
         We need a couple<br />
         of details to get you set up.
       </h1>
+    </div>
+    <div class="container-grid__form">
       <input type="text" class="field" placeholder="Name" v-model="name" />
       <div class="relative">
         <input
@@ -41,28 +43,29 @@
               text-sm
               capitalize
               text-gray-700
-              hover:bg-gray-500
-              hover:text-white
+              hover:bg-gray-500 hover:text-white
             "
           >
             {{ post_code }}
           </li>
         </ul>
       </div>
-      <button
-        @click="changeRoute()"
-        class="absolute bottom-0 mb-12 sm:mb-28 button disabled:opacity-50"
-        :disabled="!code.length | !name.length"
-      >
-        Next
-      </button>
     </div>
-    <div class="sm:flex-1 flex flex-col items-center justify-center">
+    <div class="container-grid__hero">
       <img
-        class="sm:mx-3 sm:w-9/12"
+        class="object-contain w-full"
         src="/hero/work-at-home.svg"
         alt="work at home"
       />
+    </div>
+    <div class="container-grid__button">
+      <button
+        @click="changeRoute()"
+        class="button disabled:opacity-50"
+        :disabled="!code.length || !name.length"
+      >
+        Next
+      </button>
     </div>
   </div>
 </template>
@@ -112,5 +115,3 @@ export default {
   },
 };
 </script>
-
-
