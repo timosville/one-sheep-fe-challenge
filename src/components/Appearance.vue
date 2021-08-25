@@ -1,5 +1,5 @@
 <template>
-  <div class="max-h-screen container-grid">
+  <div class="max-h-screen container-grid dark:bg-gray-800 dark:text-gray-200">
     <div class="container-grid__title">
       <h1 class="title">
         Finally, let’s <br />
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { inject, computed, ref, watch } from "vue";
+import { inject, computed, onBeforeMount, watch } from "vue";
 
 export default {
   name: "Appearance",
@@ -52,6 +52,22 @@ export default {
       get() {
         return store.state.isLight;
       },
+    });
+
+    onBeforeMount(() => {
+      changeAppearance(isLight._value);
+    });
+
+    const changeAppearance = (mode) => {
+      if (mode) {
+        return document.querySelector("html").classList.remove("dark");
+      } else {
+        return document.querySelector("html").classList.add("dark");
+      }
+    };
+
+    watch(isLight, (newLight, oldLight) => {
+      changeAppearance(newLight);
     });
 
     return {
