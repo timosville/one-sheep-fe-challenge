@@ -4,7 +4,7 @@
 
 @layer components {
   .title {
-    @apply font-bold text-4xl md:text-5xl text-center text-gray-900;
+    @apply font-bold text-4xl md:text-5xl text-center dark:text-gray-200 text-gray-900;
   }
   .subtitle {
     @apply mt-3 p-4 font-medium text-2xl text-center;

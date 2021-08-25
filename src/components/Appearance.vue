@@ -18,9 +18,11 @@
       <h2 class="subtitle">Lights on or off?</h2>
       <button
         @click="store.methods.toggleLight"
-        v-bind:class="[isLight ? 'justify-start' : 'justify-end']"
+        v-bind:class="[
+          isLight ? 'justify-start border-black' : 'justify-end border-white',
+        ]"
         class="
-          border-black border-2
+          border-2
           rounded-full
           border-grey
           flex flex-col
