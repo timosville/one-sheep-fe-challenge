@@ -4,7 +4,7 @@
 
 @layer components {
   .title {
-    @apply font-bold text-4xl text-center text-gray-900;
+    @apply font-bold text-4xl md:text-5xl text-center text-gray-900;
   }
   .subtitle {
     @apply mt-3 p-4 font-medium text-2xl text-center;
@@ -14,5 +14,17 @@
   }
   .field {
     @apply flex px-4 py-3 mx-4 mt-2 rounded-full border-black border-2 text-2xl font-bold  placeholder-black;
+  }
+  .container-grid {
+    @apply grid grid-cols-6 md:grid-cols-12 grid-rows-6;
+  }
+  .container-grid__title {
+    @apply col-start-2 col-end-6 row-start-2 row-end-3 flex flex-col items-center justify-center;
+  }
+  .container-grid__button {
+    @apply col-start-2 col-end-6 row-start-5 row-end-6 flex items-center justify-center;
+  }
+  .container-grid__hero {
+    @apply row-start-4 row-end-7 col-start-1 col-end-7 md:col-start-7 md:col-end-11 md:row-start-2 md:row-end-5 md:flex md:flex-col md:justify-center;
   }
 }

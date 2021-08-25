@@ -1,21 +1,17 @@
 <template>
-  <div
-    class="min-h-screen bg-one-yellow flex flex-col sm:flex-row justify-between"
-  >
-    <div class="flex flex-col items-center justify-items-center">
-      <h1 class="sm:mt-20 pt-24 px-8 title">
-        Hi there.<br />
-        Ready to do your best ever work?
+  <div class="bg-one-yellow max-h-screen container-grid">
+    <div class="container-grid__title">
+      <h1 class="title">
+        Hi there.
+        <br />Ready to do your best ever work?
       </h1>
-      <button
-        @click="changeRoute()"
-        class="absolute bottom-0 mb-12 sm:mb-28 button"
-      >
-        Let's Go!
-      </button>
     </div>
-    <div class="sm:flex-1 flex flex-col items-center justify-center">
-      <img class="sm:mx-3 sm:w-9/12" src="/hero/welcome.svg" alt="welcome" />
+    
+    <div class="container-grid__hero">
+      <img class="object-contain w-full" src="/hero/welcome.svg" alt="welcome" />
+    </div>
+    <div class="container-grid__button">
+      <button @click="changeRoute()" class="button">Let's Go!</button>
     </div>
   </div>
 </template>
@@ -25,7 +21,8 @@ export default {
   name: "Welcome",
   methods: {
     changeRoute() {
-      this.$router.push("/start");
+
+    this.$router.push("/start");
     },
   },
 };
