@@ -12,6 +12,7 @@ module.exports = {
   variants: {
     extend: {
       opacity: ["disabled"],
+      ringWidth: ["hover", "active"],
     },
   },
   plugins: [],
