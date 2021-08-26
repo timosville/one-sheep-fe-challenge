@@ -14,10 +14,11 @@
           class="field"
           placeholder="Post Code"
           v-model="code"
+          @input="onChange"
         />
 
         <ul
-          v-if="code"
+          v-if="autocomplete && post_codes"
           class="
             absolute
             mx-2
@@ -36,6 +37,7 @@
           <li
             v-for="(post_code, i) in post_codes"
             :key="i"
+            @click="setCode(post_code)"
             class="
               block
               px-4
@@ -43,7 +45,8 @@
               text-sm
               capitalize
               text-gray-700
-              hover:bg-gray-500 hover:text-white
+              hover:bg-gray-500
+              hover:text-white
             "
           >
             {{ post_code }}
@@ -72,12 +75,15 @@
 
 <script>
 import { inject, computed, ref, watch } from "vue";
+import axios from "axios";
 
 export default {
   name: "Name",
   setup() {
     const store = inject("store");
-    const showAutoCompleteForm = ref(false);
+    const post_codes = ref([]);
+    const error_message = ref(null);
+    const autocomplete = ref(false);
 
     const name = computed({
       get() {
@@ -85,12 +91,6 @@ export default {
       },
       set(value) {
         return store.methods.setName(value);
-      },
-    });
-
-    const post_codes = computed({
-      get() {
-        return store.state.post_codes;
       },
     });
     const code = computed({
@@ -102,11 +102,38 @@ export default {
       },
     });
 
-    watch(code, (code, newCode) => {
-      store.methods.getPostCodes;
-    });
+    const getPostCodes = (code) => {
+      const instance = axios.create({
+        baseURL: "https://api.postcodes.io/postcodes/",
+      });
+      const getPostCodes = async () => {
+        try {
+          const response = await instance.get(`${code}/autocomplete`);
 
-    return { name, code, post_codes, showAutoCompleteForm };
+          post_codes.value = response.data.result;
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      getPostCodes();
+    };
+
+    const onChange = () => {
+      getPostCodes(store.state.code);
+      if (store.state.code) {
+        autocomplete.value = true;
+      }
+      if (!store.state.code) {
+        autocomplete.value = false;
+      }
+    };
+
+    const setCode = (code) => {
+      store.methods.setCode(code);
+      autocomplete.value = false;
+    };
+
+    return { name, code, post_codes, onChange, setCode, autocomplete };
   },
   methods: {
     changeRoute() {
