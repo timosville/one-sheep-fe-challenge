@@ -95,7 +95,7 @@
       <button class="button" @click="pickAvatar()">Pick One</button>
     </div>
     <div class="container-grid__button-lower">
-      <button class="button" @click="changeRoute()">Done</button>
+      <button v-if="avatar" class="button" @click="changeRoute()">Done</button>
     </div>
     <div
       v-show="showModal"
