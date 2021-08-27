@@ -24,6 +24,10 @@
   .container-grid__button {
     @apply col-start-2 col-end-6 row-start-5 row-end-6 flex items-center justify-center;
   }
+  .container-grid__button-lower {
+    @apply col-start-4 col-end-6 row-start-6 row-end-6 flex items-center justify-center;
+  }
+
   .container-grid__hero {
     @apply row-start-4 row-end-7 col-start-1 col-end-7 md:col-start-7 md:col-end-11 md:row-start-2 md:row-end-5 md:flex md:flex-col md:justify-center;
   }
