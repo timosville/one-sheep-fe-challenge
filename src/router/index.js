@@ -4,6 +4,7 @@ import Name from "@/components/Name.vue";
 import Account from "@/components/Account.vue";
 import Appearance from "@/components/Appearance.vue";
 import Avatar from "@/components/Avatar.vue";
+import Success from "@/components/Success.vue";
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: "/avatar",
     name: "Avatar",
     component: Avatar,
+  },
+  {
+    path: "/success",
+    name: "Success",
+    component: Success,
   },
 ];
 
