@@ -37,6 +37,9 @@
   .container-grid__image {
     @apply object-contain w-full;
   }
+  .container-grid__video {
+    @apply col-start-1 col-end-7 row-start-2 md:col-start-3 md:col-end-10;
+  }
   .container-grid__navigation-right {
     @apply col-start-6  row-start-5 row-end-6;
   }
