@@ -33,4 +33,7 @@
   .container-grid__image {
     @apply object-contain w-full;
   }
+  .container-grid__navigation-right {
+    @apply col-start-6  row-start-5 row-end-6;
+  }
 }
