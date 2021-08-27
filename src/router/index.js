@@ -3,6 +3,7 @@ import Welcome from "@/components/Welcome.vue";
 import Name from "@/components/Name.vue";
 import Account from "@/components/Account.vue";
 import Appearance from "@/components/Appearance.vue";
+import Avatar from "@/components/Avatar.vue";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: "/settings",
     name: "Settings",
     component: Appearance,
+  },
+  {
+    path: "/avatar",
+    name: "Avatar",
+    component: Avatar,
   },
 ];
 
