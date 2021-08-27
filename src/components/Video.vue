@@ -8,7 +8,7 @@
       />
     </div>
     <div class="container-grid__video">
-      <video controls>
+      <video controls @ended="changeRoute()">
         <source
           src="https://res.cloudinary.com/kiekies/video/upload/v1629289654/mm3gvs6wmsg3zebylcqz.mp4"
           type="video/mp4"
@@ -22,5 +22,11 @@
 <script>
 export default {
   name: "Video",
+
+  methods: {
+    changeRoute() {
+      this.$router.push("/complete");
+    },
+  },
 };
 </script>
