@@ -21,11 +21,19 @@
 </template>
 
 <script>
+import { inject } from "vue";
+
 export default {
   name: "Complete",
+  setup() {
+    const store = inject("store");
+
+    return {};
+  },
+
   methods: {
     changeRoute() {
-      this.$router.push("/start");
+      this.$router.push("/home");
     },
   },
 };
