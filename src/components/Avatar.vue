@@ -94,6 +94,9 @@
     <div class="container-grid__button">
       <button class="button" @click="pickAvatar()">Pick One</button>
     </div>
+    <div class="container-grid__button-lower">
+      <button class="button" @click="changeRoute()">Done</button>
+    </div>
     <div
       v-show="showModal"
       class="absolute z-40 h-screen flex flex-col justify-center"
@@ -208,7 +211,7 @@ export default {
   },
   methods: {
     changeRoute() {
-      this.$router.push("/avatar-select");
+      this.$router.push("/success");
     },
   },
 };
