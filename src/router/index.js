@@ -5,8 +5,8 @@ import Account from "@/components/Account.vue";
 import Appearance from "@/components/Appearance.vue";
 import Avatar from "@/components/Avatar.vue";
 import Success from "@/components/Success.vue";
-import Video from "@/components/Video.vue"
-
+import Video from "@/components/Video.vue";
+import Complete from "@/components/Complete.vue";
 
 const routes = [
   {
@@ -41,9 +41,14 @@ const routes = [
   },
   {
     path: "/video",
-    name:"Video",
-    component: Video
-  }
+    name: "Video",
+    component: Video,
+  },
+  {
+    path: "/complete",
+    name: "Complete",
+    component: Complete,
+  },
 ];
 
 const router = createRouter({
